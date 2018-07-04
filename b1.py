@@ -3,7 +3,7 @@ from akad.ttypes import *
 from datetime import datetime
 from time import sleep
 from bs4 import BeautifulSoup
-import time, random, multiprocessing, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, urllib, urllib.parse
+import time, asyncio, json, threading, codecs, sys, os, re, urllib, requests, wikipedia, html5lib, timeit, pafy, youtube_dl
 
 line = LINE()
 line.log("Auth Token : " + str(line.authToken))
