@@ -27,12 +27,12 @@ class Config(object):
         'LINE_SERVICES': '1459630796'
     }
 
-    APP_TYPE    = ApplicationType._VALUES_TO_NAMES[96]
-    APP_VER     = '8.1.1 DESKTOP:WIN:5.1.2600-XP-x64(5.5.0.1585)'
+    APP_TYPE    = ApplicationType._VALUES_TO_NAMES[369]
+    APP_VER     = '1.4.17'
     CARRIER     = '51089, 1-0'
     SYSTEM_NAME = '5.5.0.1585'
-    SYSTEM_VER  = 'WINDOWSt5.1.2600-XP-x64'
-    SYSTEM_VER  = '11.2.5'
+    SYSTEM_VER  = 'Line/1.4.17'
+    SYSTEM_VER  = '1.4.17'
     IP_ADDR     = '8.8.8.8'
     EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 
