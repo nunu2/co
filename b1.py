@@ -13,7 +13,7 @@ line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 cl = line
 oepoll = OEPoll(cl)
 mid = cl.profile.mid
-RASuper = ["u640fc4e52553be8a0a55394712a52296","ud62334f46b0f181f69beaf801ab3c75a","uac7f91e1acef7635d06792406bc00b50","u9ab020b116f35afbdb3398f2bfe247c5","u90ca582842fdd187224f3d61b8f0eba6","u0973c029005dee2462eb7c6bdabe541f","u8d59223cc63fe9167f33d5499cef78ec"]
+RASuper = ["ud62334f46b0f181f69beaf801ab3c75a"]
 RAStaff = ["ua1b1326288657deb35461cce7f28a2d5","u1de2fe12c2814774acbe099ea030c01f"]
 RAFa = RASuper + RAStaff
 Setbot = codecs.open("setting.json","r","utf-8")
