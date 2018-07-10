@@ -75,7 +75,7 @@ class LineBot(object):
                     if self.wait["RAautojoin"] == True:
                         if op.param2 not in RASadmin and op.param2 not in self.wait["RAAdmin"] and op.param2 not in self.wait["RABots"]:
                             cl.acceptGroupInvitation(op.param1)
-                            cl.sendText(op.param1,"Selamat Tinggal\n " +str(cl.getGroup(op.param1).name))
+                            cl.sendText(op.param1,"bye! \n " +str(cl.getGroup(op.param1).name))
                             cl.leaveGroup(op.param1)
                         else:
                             cl.acceptGroupInvitation(op.param1)
@@ -87,18 +87,14 @@ class LineBot(object):
                     
                 if op.param1 in self.RAset["RAprotinvite"]:
                     if op.param2 not in RASadmin and op.param2 not in self.wait["RAAdmin"] and op.param2 not in self.wait["RAStaff"] and op.param2 not in self.wait["RABots"]:
-                        group = cl.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            cl.cancelGroupInvitation(op.param1,[_mid])
+                        group = cl.getGroup(op.param1)    
+                        cl.cancelGroupInvitation(op.param1,[op.param3])
                             
                         
                 if op.param3 in self.wait["RAblacklist"]:
                     group = cl.getGroup(op.param1)
-                    gMembMids = [contact.mid for contact in group.invitee]
-                    for _mid in gMembMids:
                         if op.param2 not in RASadmin and op.param2 not in self.wait["RAAdmin"] and op.param2 not in self.wait["RAStaff"] and op.param2 not in self.wait["RABots"]:
-                            cl.cancelGroupInvitation(op.param1,[_mid])
+                            cl.cancelGroupInvitation(op.param1,[op.param3])
                             self.wait["RAblacklist"][op.param2] = True
                             f=codecs.open('RAwait.json','w','utf-8')
                             json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -125,7 +121,6 @@ class LineBot(object):
                         f=codecs.open('RAwait.json','w','utf-8')
                         json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
                         try:
-                            cl.findAndAddContactsByMid(cl.getContact(op.param3).mid)
                             cl.inviteIntoGroup(op.param1,[op.param3])
                         except:
                             pass
@@ -134,7 +129,6 @@ class LineBot(object):
                     self.wait["RAblacklist"][op.param2] = True
                     f=codecs.open('RAwait.json','w','utf-8')
                     json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
-                    cl.findAndAddContactsByMid(cl.getContact(op.param3).mid)
                     cl.kickoutFromGroup(op.param1,[op.param2])
                     cl.inviteIntoGroup(op.param1,[op.param3])
                     
@@ -142,7 +136,6 @@ class LineBot(object):
                     self.wait["RAblacklist"][op.param2] = True
                     f=codecs.open('RAwait.json','w','utf-8')
                     json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
-                    cl.findAndAddContactsByMid(cl.getContact(op.param3).mid)
                     cl.kickoutFromGroup(op.param1,[op.param2])
                     cl.inviteIntoGroup(op.param1,[op.param3])
                     
@@ -150,13 +143,11 @@ class LineBot(object):
                     self.wait["RAblacklist"][op.param2] = True
                     f=codecs.open('RAwait.json','w','utf-8')
                     json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
-                    cl.findAndAddContactsByMid(cl.getContact(op.param3).mid)
                     cl.kickoutFromGroup(op.param1,[op.param2])
                     cl.inviteIntoGroup(op.param1,[op.param3])
                     
             if op.type == 19:
                 if op.param3 in self.wait["RABots"]:
-                    cl.findAndAddContactsByMid(cl.getContact(op.param3).mid)
                     cl.inviteIntoGroup(op.param1,[op.param3])
                     if op.param2 not in RASadmin and op.param2 not in self.wait["RAAdmin"] and op.param2 not in self.wait["RAStaff"] and op.param2 not in self.wait["RABots"]:
                         self.wait["RAblacklist"][op.param2] = True
@@ -173,11 +164,9 @@ class LineBot(object):
                         json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
                         try:
                             if op.param3 not in self.wait["RAblacklist"]:
-                                cl.findAndAddContactsByMid(cl.getContact(op.param3).mid)
                                 cl.inviteIntoGroup(op.param1,[op.param3])
                         except:
                             if op.param3 not in self.wait["RAblacklist"]:
-                                cl.findAndAddContactsByMid(cl.getContact(op.param3).mid)
                                 cl.inviteIntoGroup(op.param1,[op.param3])
             
             if op.type == 46:
