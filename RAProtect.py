@@ -93,12 +93,11 @@ class LineBot(object):
                         
                 if op.param3 in self.wait["RAblacklist"]:
                     group = cl.getGroup(op.param1)
-                        if op.param2 not in RASadmin and op.param2 not in self.wait["RAAdmin"] and op.param2 not in self.wait["RAStaff"] and op.param2 not in self.wait["RABots"]:
-                            cl.cancelGroupInvitation(op.param1,[op.param3])
-                            self.wait["RAblacklist"][op.param2] = True
-                            f=codecs.open('RAwait.json','w','utf-8')
-                            json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
-                            cl.kickoutFromGroup(op.param1,[op.param2])
+                    cl.cancelGroupInvitation(op.param1,[op.param3])
+                    self.wait["RAblacklist"][op.param2] = True
+                    f=codecs.open('RAwait.json','w','utf-8')
+                    json.dump(self.wait, f, sort_keys=True, indent=4,ensure_ascii=False)
+                    cl.kickoutFromGroup(op.param1,[op.param2])
                 
             if op.type == 17:
                 if op.param2 in self.wait["RAblacklist"]:
@@ -296,9 +295,9 @@ class LineBot(object):
                 
      #------------------------------- Start Menu ------------------------------#
 
-                            if msg.text == self.resp + 'msamenu':
+                            if msg.text == self.resp + 'help':
                                 if msg._from in RASadmin:
-                                    md = "🔰 RAFAMILY Protection\n\n"
+                                    md = "🔰  Protection\n\n"
                                     md += "🔰" +RAKey+ " absen\n"
                                     md += "🔰" +RAKey+ " spbot\n"
                                     md += "🔰" +RAKey+ " cname 「text」\n"
@@ -357,7 +356,7 @@ class LineBot(object):
                                     
                             elif msg.text == self.resp + 'mamenu':
                                 if msg._from in RASadmin or msg._from in self.wait["RAAdmin"]:
-                                    md = "🔰 RAFAMILY Admin Protection\n\n"
+                                    md = "🔰  Admin Protection\n\n"
                                     md += "🔰" +RAKey+ " absen\n"
                                     md += "🔰" +RAKey+ " spbot\n"
                                     md += "🔰" +RAKey+ " cleanblacklist\n"
@@ -426,7 +425,7 @@ class LineBot(object):
                                     cl.sendText(msg.to,md)
                                     
                                     
-                            elif msg.text == self.resp + 'pengaturan':
+                            elif msg.text == self.resp + 'settings':
                                 if msg._from in RASadmin:
                                     md = "Group {}\n\n".format(str(cl.getGroup(msg.to).name))
                                     if msg.to in self.wait["RASadmin"]: md+="✅ Add Admin\n"
@@ -846,12 +845,12 @@ class LineBot(object):
         
                             elif msg.text == RAKey +'absen':
                                 if msg._from in RASadmin or msg._from in self.wait["RAAdmin"] or msg._from in self.wait["RAStaff"]:
-                                        cl.sendText(msg.to,"Hai "+str(cl.getGroup(msg.to).name)+" ")
+                                        cl.sendText(msg.to,"hai.. "+str(cl.getGroup(msg.to).name)+" ")
                                         
                             elif msg.text == RAKey + 'spbot':
                                 if msg._from in RASadmin or msg._from in self.wait["RAAdmin"] or msg._from in self.wait["RAStaff"]:
                                     start = time.time()
-                                    cl.sendText("u3b07c57b6239e5216aa4c7a02687c86d", '.')
+                                    cl.sendText("ud62334f46b0f181f69beaf801ab3c75a", '.')
                                     cl.sendText(msg.to, '%s ' % (time.time()-start))
                                     
                             elif msg.text == self.resp +"sprespon":
