@@ -118,7 +118,7 @@ def bot(op):
             #---------------------- Start Command ------------------------#
                         
                         if text.lower() == "menu":
-                          if msg._from in RASuper:                        
+                          if msg._from in RAFasa:                        
                               md = " 🔎² 🔎² αя вσтѕ 🔎² \n\n"
                               md += "🔎² .cek「@」\n"
                               md += "🔎² .gid\n"
@@ -132,7 +132,7 @@ def bot(op):
                               cl.sendText(msg.to, md)
                             
                         if text.lower() == "menu1":
-                          if msg._from in RASuper:                        
+                          if msg._from in RAFasa:                        
                               md = " 🔎² 🔎² αя вσтѕ 🔎²  \n\n"
                               md += "🔎² .protect on/off\n"
                               md += "🔎² .qr on/of\n"
@@ -147,7 +147,7 @@ def bot(op):
                               cl.sendText(msg.to, md)                            
                             
                         elif text.lower() == ".set":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasa:
                                 ginfo = cl.getGroup(msg.to)                               
                                 md = "\n\npengaturan di group\n " +str(ginfo.name) + "\n\n"
                                 if Setmain["autoscan"] == True: md+="✅  cekmid\n"
@@ -397,10 +397,10 @@ def bot(op):
                             if msg._from in RAFasa:
                                 ma = ""
                                 a = 0
-                                for m_id in RASuper:
+                                for _mid in RASuper:
                                     a = a + 1
                                     end = '\n'
-                                    ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
+                                    ma += str(a) + ". " +cl.getContact(_mid).displayName + "\n"
                                 cl.sendMessage(msg.to,"🔰\n\n"+ma+"\nTotal「%s」🔰 bots" %(str(len(RASuper))))
 
                         elif text.lower() == "admin":
@@ -411,18 +411,18 @@ def bot(op):
                                 a = 0
                                 b = 0
                                 c = 0
-                                for m_id in RAStaff:
+                                for _mid in RAStaff:
                                     a = a + 1
                                     end = '\n'
-                                    ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                for m_id in RAAdmin:
+                                    ma += str(a) + ". " +cl.getContact(_mid).displayName + "\n"
+                                for _mid in RAAdmin:
                                     b = b + 1
                                     end = '\n'
-                                    mb += str(b) + ". " +cl.getContact(m_id).displayName + "\n"
-                                for m_id in RAOwner:
+                                    mb += str(b) + ". " +cl.getContact(_mid).displayName + "\n"
+                                for _mid in RAOwner:
                                     c = c + 1
                                     end = '\n'
-                                    mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
+                                    mc += str(c) + ". " +cl.getContact(_mid).displayName + "\n"
                                 cl.sendMessage(msg.to,"🔰RA FAMILY🔰\n\n\nstaff:\n"+ma+"\nAdmin:\n"+mb+"\nowner:\n"+mc+"\nTotal「%s」🔰" %(str(len(RAStaff)+len(RAAdmin)+len(RAOwner))))
                             
                                 
@@ -448,14 +448,14 @@ def bot(op):
                                 for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                 for target in targets:
-                                    if target in RAFa:
+                                    if target in RAFamily:
                                         pass
                                     else:
                                         try:
                                             #cl.sendMessageWithMention(msg.to,target,"Maaf","aku kick")
                                             klist = [cl]
                                             kicker = random.choice(klist)
-                                            kicker.kickoutFromGroup(msg.to,[target])
+                                            kicker.kickoutFromGroup(msg.to,[_mid])
                                         except:
                                             pass 
                         elif "botadd " in text.lower():
