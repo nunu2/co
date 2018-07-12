@@ -496,7 +496,20 @@ def bot(op):
                                            RAStaff.append(target)
                                            cl.sendMessage(msg.to,"sukses added staff")
                                        except:
-                                           pass                                        
+                                           pass 
+                        elif "owneradd " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           RAOwner.append(target)
+                                           cl.sendMessage(msg.to,"sukses added owner")
+                                       except:
+                                           pass                                          
                         elif "botdell " in text.lower():
                             if msg._from in RAOwner:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -510,7 +523,35 @@ def bot(op):
                                            RASuper.remove(target)
                                            cl.sendMessage(msg.to,"sukses remove bots")
                                        except:
-                                           pass                                        
+                                           pass   
+                        elif "staffdell " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                   if target not in RAOwner:
+                                       try:
+                                           RAStaff.remove(target)
+                                           cl.sendMessage(msg.to,"sukses remove staff")
+                                       except:
+                                           pass 
+                        elif "admindell " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                   if target not in RAOwner:
+                                       try:
+                                           RAAdmin.remove(target)
+                                           cl.sendMessage(msg.to,"sukses remove ")
+                                       except:
+                                           pass                                            
                         elif "kick @α я" in text.lower():
                             if Setmain["larangan"] == True:                            
                                 cl.sendMessageWithMention(msg.to, msg._from,"wooiiii","mau kick bosku ya")
