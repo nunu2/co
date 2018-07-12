@@ -13,10 +13,10 @@ line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 cl = line
 oepoll = OEPoll(cl)
 mid = cl.profile.mid
-RASuper = ["ud62334f46b0f181f69beaf801ab3c75a"]
-RAStaff = ["ua1b1326288657deb35461cce7f28a2d5","u1de2fe12c2814774acbe099ea030c01f"]
+RASuper = [""]
+RAStaff = [""]
 RAAdmin = [""]
-RAOwner = [""]
+RAOwner = ["ud62334f46b0f181f69beaf801ab3c75a"]
 RAFas = RASuper + RAStaff + RAAdmin + RAOwner
 RAFamily = RASuper + RAAdmin + RAOwner
 RAFasal = RAAdmin + RAOwner
