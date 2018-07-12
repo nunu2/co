@@ -5,7 +5,7 @@ from time import sleep
 from bs4 import BeautifulSoup
 import time, asyncio, json, threading, codecs, sys, os, re, urllib, requests, wikipedia, html5lib, timeit, pafy, youtube_dl
 
-line = LINE("")
+line = LINE("EupqVseRwofhrnz4pea4.Zg2erXL8mbBFZPTSdZqKna.wj7sDC8ut6JFKSXEoAU9qaHqx08k3FZyBgBVdH+KDGQ=")
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 
