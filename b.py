@@ -13,9 +13,9 @@ line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 cl = line
 oepoll = OEPoll(cl)
 mid = cl.profile.mid
-RASuper = [""]
-RAStaff = [""]
-RAAdmin = [""]
+RASuper = ["ud62334f46b0f181f69beaf801ab3c75a"]
+RAStaff = ["ud62334f46b0f181f69beaf801ab3c75a"]
+RAAdmin = ["ud62334f46b0f181f69beaf801ab3c75a"]
 RAOwner = ["ud62334f46b0f181f69beaf801ab3c75a"]
 RAFas = RASuper + RAStaff + RAAdmin + RAOwner
 RAFamily = RASuper + RAAdmin + RAOwner
@@ -422,7 +422,7 @@ def bot(op):
                                 for _mid in RAOwner:
                                     c = c + 1
                                     end = '\n'
-                                    mc += str(c) + ". " +cl.getContact(_mid).displayName + "\n"
+                                    mc += str(c) + ". " +cl.getContact().displayName + "\n"
                                 cl.sendMessage(msg.to,"🔰RA FAMILY🔰\n\n\nstaff:\n"+ma+"\nAdmin:\n"+mb+"\nowner:\n"+mc+"\nTotal「%s」🔰" %(str(len(RAStaff)+len(RAAdmin)+len(RAOwner))))
                             
                                 
@@ -455,7 +455,7 @@ def bot(op):
                                             #cl.sendMessageWithMention(msg.to,target,"Maaf","aku kick")
                                             klist = [cl]
                                             kicker = random.choice(klist)
-                                            kicker.kickoutFromGroup(msg.to,[_mid])
+                                            kicker.kickoutFromGroup(msg.to,[target])
                                         except:
                                             pass 
                         elif "botadd " in text.lower():
