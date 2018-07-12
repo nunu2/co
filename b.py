@@ -48,6 +48,7 @@ def bot(op):
                   Setmain["blacklist"][op.param2] = True
         if op.type == 13:
             if op.param3 in Setmain["blacklist"]:
+                G = cl.getGroup(op.paramm1)
                 cl.cancelGroupInvitation(op.param1,[op.param3])
                 cl.kickoutFromGroup(op.param1,[op.param2])
             else:
@@ -57,6 +58,11 @@ def bot(op):
                 cl.kickoutFromGroup(op.param1,[op.param2])
             else:
                 pass
+        if op.type == 32:
+                cl.inviteIntoGroup(op.param1,RASuper)
+                cl.kickoutFromGroup(op.param1,[op.param2])
+            else:
+                pass            
         if op.type == 32:
            if Setmain["cancel"] == True:
                if op.param2 not in RAFa:
@@ -84,7 +90,9 @@ def bot(op):
                   cl.kickoutFromGroup(op.param1,[op.param2])
         if op.type == 19:
             if mid in op.param3:
-               Setmain["blacklist"][op.param2] = True                
+               Setmain["blacklist"][op.param2] = True
+            if mid in op.param1:
+               Setmain["blacklist"][op.param2] = True              
         if op.type == 26:
             msg = op.message
             text = msg.text
