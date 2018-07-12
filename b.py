@@ -28,7 +28,7 @@ def bot(op):
 
         if op.type == 13:
             if mid in op.param3:
-              if op.param2 in RASuper:                    
+              if op.param2 in RAFa:                    
                 if Setmain["autojoin"] == True:                 
                     cl.acceptGroupInvitation(op.param1)
 
@@ -396,7 +396,21 @@ def bot(op):
                                             kicker = random.choice(klist)
                                             kicker.kickoutFromGroup(msg.to,[target])
                                         except:
-                                            pass                                 
+                                            pass 
+                        elif "botadd " in text.lower():
+                            if msg._from in RAStaff:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           RASuper.append(target)
+                                           cl.sendMessage(msg.to,"sukses added bots")
+                                       except:
+                                           pass
+                                        
                         elif "kick @α я" in text.lower():
                             if Setmain["larangan"] == True:                            
                                 cl.sendMessageWithMention(msg.to, msg._from,"wooiiii","mau kick bosku ya")
