@@ -5,7 +5,7 @@ from time import sleep
 from bs4 import BeautifulSoup
 import time, asyncio, json, threading, codecs, sys, os, re, urllib, requests, wikipedia, html5lib, timeit, pafy, youtube_dl
 
-line = LINE("EuNK0DSezLhSSIfrebb6.za+e5svtVOOkvtLheQuILG.EkFWKlxiCnPwWr5sJtKc9iLBSnnpp1dxSQQTxfUUSAY=")
+line = LINE("")
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 
@@ -13,8 +13,8 @@ line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 cl = line
 oepoll = OEPoll(cl)
 mid = cl.profile.mid
-RASuper = ["u640fc4e52553be8a0a55394712a52296","uac7f91e1acef7635d06792406bc00b50","ub5b9a82c4eb82625188cfeb79483c22d","u8b206423cd23b08a2c233f02582f9c8a","ud62334f46b0f181f69beaf801ab3c75a"]
-RAStaff = ["ua1b1326288657deb35461cce7f28a2d5","u1de2fe12c2814774acbe099ea030c01f"]
+RASuper = ["ud62334f46b0f181f69beaf801ab3c75a"]
+RAStaff = ["ud62334f46b0f181f69beaf801ab3c75a"]
 RAFa = RASuper + RAStaff
 Setbot = codecs.open("setting.json","r","utf-8")
 Setmain = json.load(Setbot) 
