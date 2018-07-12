@@ -78,8 +78,8 @@ def bot(op):
                  cl.inviteIntoGroup(op.param1,RASuper)            
                  cl.kickoutFromGroup(op.param1,[op.param2])
                  Setmain["blacklist"][op.param2] = True
-              else:
-                  pass
+             else:
+                 pass
                     
         if op.type == 46:
             if op.param2 in mid:
@@ -169,7 +169,7 @@ def bot(op):
             #---------------------- On/Off Command -------------------# 
             
                         elif text.lower() == ".autoread on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["autoread"] == False:
                                     Setmain["autoread"] = True
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Autoread diaktifkan")
@@ -177,7 +177,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".autoread off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["autoread"] == True:
                                     Setmain["autoread"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Autoread dinonaktifkan")
@@ -185,7 +185,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off")
 
                         elif text.lower() == ".re on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["cancel"] == False:
                                     Setmain["cancel"] = True
                                     cl.sendMessageWithMention(msg.to,msg._from,"","diaktifkan")
@@ -193,7 +193,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".re off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["cancel"] == True:
                                     Setmain["cancel"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","di nonaktifkan")
@@ -201,7 +201,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off")
                                                 
                         elif text.lower() == ".protect on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["protect"] == False:
                                     Setmain["protect"] = True
                                     cl.sendMessageWithMention(msg.to,msg._from,"","protect group diaktifkan")
@@ -209,7 +209,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".protect off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["protect"] == True:
                                     Setmain["protect"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","protect group dinonaktifkan")
@@ -217,7 +217,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","sudah off")
 
                         elif text.lower() == ".larangan on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["larangan"] == False:
                                     Setmain["larangan"] = True
                                     cl.sendMessageWithMention(msg.to,msg._from,"","larangan group diaktifkan")
@@ -225,7 +225,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".larangan off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["larangan"] == True:
                                     Setmain["larangan"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","larangan group dinonaktifkan")
@@ -233,7 +233,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","sudah off")                                    
 
                         elif text.lower() == ".join on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["autojoin"] == False:
                                     Setmain["autojoin"] = True
                                     cl.sendMessageWithMention(msg.to,msg._from,"","already on")
@@ -241,7 +241,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".join off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["autojoin"] == True:
                                     Setmain["autojoin"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","already off")
@@ -250,7 +250,7 @@ def bot(op):
                                     
                                     
                         elif text.lower() == ".invite on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["protectguest"] == False:
                                     Setmain["protectguest"] = True
                                     cl.sendMessageWithMention(msg.to,msg._from,"","protect invite diaktifkan")
@@ -258,7 +258,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".invite off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["protectguest"] == True:
                                     Setmain["protectguest"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","protect invite dinonaktifkan")
@@ -267,7 +267,7 @@ def bot(op):
                                     
             
                         elif text.lower() == ".qr on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["protectqr"] == False:
                                     Setmain["protectqr"] = True
                                     cl.sendMessageWithMention(msg.to,msg._from,"","protect Qr diaktifkan")
@@ -275,7 +275,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".qr off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 if Setmain["protectqr"] == True:
                                     Setmain["protectqr"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","protect Qr dinonaktifkan")
@@ -283,7 +283,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off")                                   
                                     
                         elif text.lower() == ".cekmid on":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasa:
                                 if Setmain["autoscan"] == False:
                                     Setmain["autoscan"] = True
                                     ginfo = cl.getGroup(msg.to)
@@ -293,7 +293,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
                         elif text.lower() == ".cekmid off":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasa:
                                 if Setmain["autoscan"] == True:
                                     Setmain["autoscan"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Cekmid dinonaktifkan")
@@ -304,7 +304,7 @@ def bot(op):
                         
                                                                        
                         elif ".cek" in text.lower():
-                            if msg._from in RASuper:                    
+                            if msg._from in RAFasa:                    
                                 key = eval(msg.contentMetadata["MENTION"])
                                 keys = key["MENTIONEES"][0]["M"]
                                 ra = cl.getContact(keys)
@@ -315,55 +315,55 @@ def bot(op):
                                     pass
                             
                         elif text.lower() == ".gid":
-                            if msg._from in RASuper:                            
+                            if msg._from in RAFasa:                            
                                 cl.sendMessageWithMention(msg.to, msg._from,"","\nMemproses..")
                                 cl.sendText(msg.to,msg.to)
                             
                         elif text.lower() == ".yid":
-                            if msg._from in RASuper:                            
+                            if msg._from in RAFasa:                            
                                 cl.sendMessageWithMention(msg.to, msg._from,"","\nMemproses..")
                                 cl.sendText(msg.to,msg._from)
                         
                         elif text.lower() == ".respon":
-                            if msg._from in RASuper:                            
+                            if msg._from in RAFasa:                            
                                 cl.sendMessageWithMention(msg.to,msg._from,""," ")
                             
                         elif text.lower() == ".spbot":
-                            if msg._from in RASuper:                            
+                            if msg._from in RAFasa:                            
                                 start = time.time()
                                 cl.sendText(msg.to, "Loading...")
                                 elapsed_time = time.time() - start
                                 cl.sendText(msg.to, "%s " % (elapsed_time))
                           
                         elif text.lower() == ".restart":
-                            if msg._from in RASuper:
+                            if msg._from in RAOwner:
                                 cl.sendMessageWithMention(msg.to,msg._from,"","Tunggu Sebentar..")
                                 python3 = sys.executable
                                 os.execl(python3, python3, *sys.argv)
                                 
                         elif text.lower() == ".removechat":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 try:
                                     cl.removeAllMessages(op.param2)
                                     cl.sendMessageWithMention(msg.to,msg._from,"","chat bersih...")
                                 except:
                                     pass  
 
-                        elif cmd == "contact admin" or text.lower() == 'contact admin':
+                        elif text.lower() == "contact admin" or text.lower() == 'contact admin':
                             if msg._from in RAFasal:
                                 ma = ""
                                 for i in RAAdmin:
                                     ma = cl.getContact(i)
                                     cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
-                        elif cmd == "contact staff" or text.lower() == 'contact staff':
+                        elif text.lower() == "contact staff" or text.lower() == 'contact staff':
                             if msg._from in RAFasal:
                                 ma = ""
                                 for i in RAStaff:
                                     ma = cl.getContact(i)
                                     cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
-                        elif cmd == "contact bot" or text.lower() == 'contact bot':
+                        elif text.lower() == "contact bot" or text.lower() == 'contact bot':
                             if msg._from in RAFasal:
                                 ma = ""
                                 for i in RASuper:
@@ -372,17 +372,17 @@ def bot(op):
                                 
                                                     
                         elif text.lower() == ".pulang":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 ra = cl.getGroup(msg.to)
                                 #cl.sendMessageWithMention(msg.to,ra.creator.mid,"Maaf pemilik group","\naku keluar dulu ya..")
                                 cl.leaveGroup(msg.to)
                         elif text.lower() ==".clearban":
-                            if msg._from in RASuper:                                
+                            if msg._from in RAFasal:                                
                                 Setmain["blacklist"] = {}
                                 cl.sendMessageWithMention(msg.to,msg._from,"","blacklist di kosongkan.")                                 
 
                         elif text.lower() == ".listgroup":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                ma = ""
                                a = 0
                                gid = cl.getGroupIdsJoined()
@@ -394,7 +394,7 @@ def bot(op):
                                cl.sendText(msg.to,"╔══[ ℓιsт gяσυρ ]\n║\n"+ma+"║\n╚══[ тσтαℓ「"+str(len(gid))+"」gяσυρ ]")  
 
                         elif text.lower() == "bots":
-                            if msg._from in RAStaff:
+                            if msg._from in RAFasa:
                                 ma = ""
                                 a = 0
                                 for m_id in RASuper:
@@ -404,7 +404,7 @@ def bot(op):
                                 cl.sendMessage(msg.to,"🔰\n\n"+ma+"\nTotal「%s」🔰 bots" %(str(len(RASuper))))
 
                         elif text.lower() == "admin":
-                            if msg._from in admin:
+                            if msg._from in RAFasa:
                                 ma = ""
                                 mb = ""
                                 mc = ""
@@ -427,7 +427,7 @@ def bot(op):
                             
                                 
                         elif text.lower() == ".listbl":
-                            if msg._from in RASuper:
+                            if msg._from in RAFasa:
                                 if Setmain["blacklist"] == {}:
                                     cl.sendMessageWithMention(msg.to, msg._from,"Maaf","blacklist kosong")
                                 else:
@@ -441,7 +441,7 @@ def bot(op):
 
                                     
                         elif ".hai" in text.lower():
-                            if msg._from in RASuper:
+                            if msg._from in RAFasal:
                                 key = eval(msg.contentMetadata["MENTION"])
                                 key["MENTIONEES"][0]["M"]
                                 targets = []
@@ -459,7 +459,7 @@ def bot(op):
                                         except:
                                             pass 
                         elif "botadd " in text.lower():
-                            if msg._from in RAStaff:
+                            if msg._from in RAOwner:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
                                targets = []
@@ -472,14 +472,14 @@ def bot(op):
                                        except:
                                            pass
                         elif "botdell " in text.lower():
-                            if msg._from in admin:
+                            if msg._from in RAOwner:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
                                targets = []
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                for target in targets:
-                                   if target not in RAStaff:
+                                   if target not in RAOwner:
                                        try:
                                            RASuper.remove(target)
                                            cl.sendMessage(msg.to,"sukses remove bots")
