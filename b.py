@@ -471,6 +471,32 @@ def bot(op):
                                            cl.sendMessage(msg.to,"sukses added bots")
                                        except:
                                            pass
+                        elif "adminadd " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           RAAdmin.append(target)
+                                           cl.sendMessage(msg.to,"sukses added admin")
+                                       except:
+                                           pass 
+                        elif "staffadd " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           RAStaff.append(target)
+                                           cl.sendMessage(msg.to,"sukses added staff")
+                                       except:
+                                           pass                                        
                         elif "botdell " in text.lower():
                             if msg._from in RAOwner:
                                key = eval(msg.contentMetadata["MENTION"])
