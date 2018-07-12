@@ -15,7 +15,12 @@ oepoll = OEPoll(cl)
 mid = cl.profile.mid
 RASuper = ["ud62334f46b0f181f69beaf801ab3c75a"]
 RAStaff = ["ua1b1326288657deb35461cce7f28a2d5","u1de2fe12c2814774acbe099ea030c01f"]
-RAFa = RASuper + RAStaff
+RAAdmin = [""]
+RAOwner = [""]
+RAFas = RASuper + RAStaff + RAAdmin + RAOwner
+RAFamily = RASuper + RAAdmin + RAOwner
+RAFasal = RAAdmin + RAOwner
+RAFasa = RAStaff + RAAdmin + RAOwner
 Setbot = codecs.open("setting.json","r","utf-8")
 Setmain = json.load(Setbot) 
 
@@ -28,13 +33,13 @@ def bot(op):
 
         if op.type == 13:
             if mid in op.param3:
-              if op.param2 in RAFa:                    
+              if op.param2 in RAFamily:                    
                 if Setmain["autojoin"] == True:                 
                     cl.acceptGroupInvitation(op.param1)
 
         if op.type == 11:
            if Setmain["protectqr"] == True:
-               if op.param2 not in RAFa:
+               if op.param2 not in RAFas:
                    G = cl.getGroup(op.param1)
                    G.preventJoinByTicket = True
                    cl.kickoutFromGroup(op.param1,[op.param2])
@@ -42,7 +47,7 @@ def bot(op):
                    Setmain["blacklist"][op.param2] = True        
         if op.type == 13:
            if Setmain["protectguest"] == True:
-               if op.param2 not in RAFa:
+               if op.param2 not in RAFas:
                   cl.cancelGroupInvitation(op.param1,[op.param3])
                   cl.kickoutFromGroup(op.param1,[op.param2]) 
                   Setmain["blacklist"][op.param2] = True
@@ -59,21 +64,22 @@ def bot(op):
                 pass
         if op.type == 32:
            if Setmain["cancel"] == True:
-               if op.param2 not in RAFa:
+               if op.param2 not in RAFas:
                   cl.kickoutFromGroup(op.param1,[op.param2])
                   Setmain["blacklist"][op.param2] = True            
         if op.type == 19:
            if Setmain["protect"] == True:
-               if op.param2 not in RASuper:
+               if op.param2 not in RAFamily:
                   cl.kickoutFromGroup(op.param1,[op.param2]) 
                   Setmain["blacklist"][op.param2] = True                
         if op.type == 19:
            if op.param3 in RASuper:
-              cl.inviteIntoGroup(op.param1,RASuper)            
-              cl.kickoutFromGroup(op.param1,[op.param2])
-              Setmain["blacklist"][op.param2] = True
-           else:
-               pass
+             if op.param2 not in RAFamily:
+                 cl.inviteIntoGroup(op.param1,RASuper)            
+                 cl.kickoutFromGroup(op.param1,[op.param2])
+                 Setmain["blacklist"][op.param2] = True
+              else:
+                  pass
                     
         if op.type == 46:
             if op.param2 in mid:
@@ -363,7 +369,42 @@ def bot(op):
                                    a = a + 1
                                    end = "\n"
                                    ma += "╠ " + str(a) + ". " +G.name+ "\n"
-                               cl.sendText(msg.to,"╔══[ ℓιsт gяσυρ ]\n║\n"+ma+"║\n╚══[ тσтαℓ「"+str(len(gid))+"」gяσυρ ]")                                
+                               cl.sendText(msg.to,"╔══[ ℓιsт gяσυρ ]\n║\n"+ma+"║\n╚══[ тσтαℓ「"+str(len(gid))+"」gяσυρ ]")  
+
+                        elif text.lower() == "bots":
+                          if Setmain["RASuper"] == True:
+                            if msg._from in RAStaff:
+                                ma = ""
+                                a = 0
+                                for m_id in RASuper:
+                                    a = a + 1
+                                    end = '\n'
+                                    ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
+                                cl.sendMessage(msg.to,"🔰\n\n"+ma+"\nTotal「%s」🔰 bots" %(str(len(RASuper))))
+
+                        elif text.lower() == "admin":
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                                ma = ""
+                                mb = ""
+                                mc = ""
+                                a = 0
+                                b = 0
+                                c = 0
+                                for m_id in RAStaff:
+                                    a = a + 1
+                                    end = '\n'
+                                    ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
+                                for m_id in RAAdmin:
+                                    b = b + 1
+                                    end = '\n'
+                                    mb += str(b) + ". " +cl.getContact(m_id).displayName + "\n"
+                                for m_id in RAOwner:
+                                    c = c + 1
+                                    end = '\n'
+                                    mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
+                                cl.sendMessage(msg.to,"🔰RA FAMILY🔰\n\n\nstaff:\n"+ma+"\nAdmin:\n"+mb+"\nowner:\n"+mc+"\nTotal「%s」🔰" %(str(len(RAStaff)+len(RAAdmin)+len(RAOwner))))
+                            
                                 
                         elif text.lower() == ".listbl":
                             if msg._from in RASuper:
