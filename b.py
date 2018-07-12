@@ -372,7 +372,6 @@ def bot(op):
                                cl.sendText(msg.to,"╔══[ ℓιsт gяσυρ ]\n║\n"+ma+"║\n╚══[ тσтαℓ「"+str(len(gid))+"」gяσυρ ]")  
 
                         elif text.lower() == "bots":
-                          if Setmain["RASuper"] == True:
                             if msg._from in RAStaff:
                                 ma = ""
                                 a = 0
@@ -383,7 +382,6 @@ def bot(op):
                                 cl.sendMessage(msg.to,"🔰\n\n"+ma+"\nTotal「%s」🔰 bots" %(str(len(RASuper))))
 
                         elif text.lower() == "admin":
-                          if wait["selfbot"] == True:
                             if msg._from in admin:
                                 ma = ""
                                 mb = ""
