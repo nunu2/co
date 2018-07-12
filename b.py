@@ -80,6 +80,15 @@ def bot(op):
               Setmain["blacklist"][op.param2] = True
            else:
                pass
+        if op.type == 55:
+            if op.param1 in self.RAset["RAreadPoint"]:
+                if op.param2 in self.RAset["RAreadMember"][op.param1]:
+                    pass
+                else:
+                    self.RAset["RAreadMember"][op.param1][op.param2] = True
+            else:
+                    pass
+            
                     
         if op.type == 46:
             if op.param2 in mid:
