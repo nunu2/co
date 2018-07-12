@@ -63,7 +63,9 @@ def bot(op):
                if op.param2 not in RAFa:
                   cl.kickoutFromGroup(op.param1,[op.param2])
                   cl.inviteIntoGroup(op.param1,[op.param3]
-                  Setmain["blacklist"][op.param2] = True            
+                  Setmain["blacklist"][op.param2] = True 
+              else:
+                  pass
         if op.type == 19:
            if Setmain["protect"] == True:
                if op.param2 not in RASuper:
