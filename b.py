@@ -410,7 +410,20 @@ def bot(op):
                                            cl.sendMessage(msg.to,"sukses added bots")
                                        except:
                                            pass
-                                        
+                        elif "botdell " in text.lower():
+                            if msg._from in admin:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                   if target not in RAStaff:
+                                       try:
+                                           RASuper.remove(target)
+                                           cl.sendMessage(msg.to,"sukses remove bots")
+                                       except:
+                                           pass                                        
                         elif "kick @α я" in text.lower():
                             if Setmain["larangan"] == True:                            
                                 cl.sendMessageWithMention(msg.to, msg._from,"wooiiii","mau kick bosku ya")
