@@ -58,11 +58,7 @@ def bot(op):
                 cl.kickoutFromGroup(op.param1,[op.param2])
             else:
                 pass
-        if op.type == 32:
-                cl.inviteIntoGroup(op.param1,RASuper)
-                cl.kickoutFromGroup(op.param1,[op.param2])
-            else:
-                pass            
+     
         if op.type == 32:
            if Setmain["cancel"] == True:
                if op.param2 not in RAFa:
@@ -81,14 +77,15 @@ def bot(op):
            else:
                pass
         if op.type == 55:
-            if op.param1 in Setmain["RAreadPoint"]:
-                if op.param2 in Setmain["RAreadMember"][op.param1]:
+            if op.param1 in Setmain["readPoint"]:
+                if op.param2 in Setmain["readMember"][op.param1]:
                     pass
                 else:
-                    Setmain["RAreadMember"][op.param1][op.param2] = True
+                    Setmain["readMember"][op.param1][op.param2] = True
             else:
                 pass
-            
+            if op.param1 in Setmain["blacklist"]:
+                cl.kickoutFromGroup(op.param1,[op.param2])
                     
         if op.type == 46:
             if op.param2 in mid:
