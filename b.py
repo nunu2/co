@@ -81,13 +81,13 @@ def bot(op):
            else:
                pass
         if op.type == 55:
-            if op.param1 in self.RAset["RAreadPoint"]:
-                if op.param2 in self.RAset["RAreadMember"][op.param1]:
+            if op.param1 in Setmain["RAreadPoint"]:
+                if op.param2 in Setmain["RAreadMember"][op.param1]:
                     pass
                 else:
-                    self.RAset["RAreadMember"][op.param1][op.param2] = True
+                    Setmain["RAreadMember"][op.param1][op.param2] = True
             else:
-                    pass
+                pass
             
                     
         if op.type == 46:
