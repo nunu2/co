@@ -62,10 +62,8 @@ def bot(op):
            if Setmain["cancel"] == True:
                if op.param2 not in RAFa:
                   cl.kickoutFromGroup(op.param1,[op.param2])
-                  cl.inviteIntoGroup(op.param1,[op.param3]
                   Setmain["blacklist"][op.param2] = True 
-              else:
-                  pass
+              
         if op.type == 19:
            if Setmain["protect"] == True:
                if op.param2 not in RASuper:
@@ -180,7 +178,7 @@ def bot(op):
                                 
             #---------------------- On/Off Command -------------------# 
             
-                        elif text.lower() == "F1 autoread on":
+                        elif text.lower() == "f1 autoread on":
                             if msg._from in RASuper:
                                 if Setmain["autoread"] == False:
                                     Setmain["autoread"] = True
@@ -188,7 +186,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
-                        elif text.lower() == "F1 autoread off":
+                        elif text.lower() == "f1 autoread off":
                             if msg._from in RASuper:
                                 if Setmain["autoread"] == True:
                                     Setmain["autoread"] = False
@@ -212,7 +210,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off")
                                                 
-                        elif text.lower() == "F1 protect on":
+                        elif text.lower() == "f1 protect on":
                             if msg._from in RASuper:
                                 if Setmain["protect"] == False:
                                     Setmain["protect"] = True
@@ -220,7 +218,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
-                        elif text.lower() == "F1 protect off":
+                        elif text.lower() == "f1 protect off":
                             if msg._from in RASuper:
                                 if Setmain["protect"] == True:
                                     Setmain["protect"] = False
@@ -228,7 +226,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","sudah off")
 
-                        elif text.lower() == "F1 larangan on":
+                        elif text.lower() == "f1 larangan on":
                             if msg._from in RASuper:
                                 if Setmain["larangan"] == False:
                                     Setmain["larangan"] = True
@@ -236,7 +234,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
-                        elif text.lower() == "F1 larangan off":
+                        elif text.lower() == "f1 larangan off":
                             if msg._from in RASuper:
                                 if Setmain["larangan"] == True:
                                     Setmain["larangan"] = False
@@ -244,7 +242,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","sudah off")                                    
 
-                        elif text.lower() == "F1 join on":
+                        elif text.lower() == "f1 join on":
                             if msg._from in RASuper:
                                 if Setmain["autojoin"] == False:
                                     Setmain["autojoin"] = True
@@ -252,7 +250,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
-                        elif text.lower() == "F1 join off":
+                        elif text.lower() == "f1 join off":
                             if msg._from in RASuper:
                                 if Setmain["autojoin"] == True:
                                     Setmain["autojoin"] = False
@@ -261,7 +259,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","sudah off")                                    
                                     
                                     
-                        elif text.lower() == "F1 invite on":
+                        elif text.lower() == "f1 invite on":
                             if msg._from in RASuper:
                                 if Setmain["protectguest"] == False:
                                     Setmain["protectguest"] = True
@@ -269,7 +267,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
-                        elif text.lower() == "F1 invite off":
+                        elif text.lower() == "f1 invite off":
                             if msg._from in RASuper:
                                 if Setmain["protectguest"] == True:
                                     Setmain["protectguest"] = False
@@ -278,7 +276,7 @@ def bot(op):
                                     cl.sendMessageWithMention(msg.to,msg._from,"","sudah off")                                    
                                     
             
-                        elif text.lower() == "F1 qr on":
+                        elif text.lower() == "f1 qr on":
                             if msg._from in RASuper:
                                 if Setmain["protectqr"] == False:
                                     Setmain["protectqr"] = True
@@ -286,7 +284,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah aktif")
                                     
-                        elif text.lower() == "F1 qr off":
+                        elif text.lower() == "f1 qr off":
                             if msg._from in RASuper:
                                 if Setmain["protectqr"] == True:
                                     Setmain["protectqr"] = False
@@ -294,7 +292,7 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off")                                   
                                     
-                        elif text.lower() == "F1 cekmid on":
+                        elif text.lower() == "f1 cekmid on":
                             if msg._from in RASuper:
                                 if Setmain["autoscan"] == False:
                                     Setmain["autoscan"] = True
