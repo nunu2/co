@@ -347,7 +347,29 @@ def bot(op):
                                     cl.removeAllMessages(op.param2)
                                     cl.sendMessageWithMention(msg.to,msg._from,"","chat bersih...")
                                 except:
-                                    pass        
+                                    pass  
+
+                        elif cmd == "contact admin" or text.lower() == 'contact admin':
+                            if msg._from in RAFasal:
+                                ma = ""
+                                for i in RAAdmin:
+                                    ma = cl.getContact(i)
+                                    cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
+
+                        elif cmd == "contact staff" or text.lower() == 'contact staff':
+                            if msg._from in RAFasal:
+                                ma = ""
+                                for i in RAStaff:
+                                    ma = cl.getContact(i)
+                                    cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
+
+                        elif cmd == "contact bot" or text.lower() == 'contact bot':
+                            if msg._from in RAFasal:
+                                ma = ""
+                                for i in RASuper:
+                                    ma = cl.getContact(i)
+                                    cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
+                                
                                                     
                         elif text.lower() == ".pulang":
                             if msg._from in RASuper:
