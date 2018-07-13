@@ -410,7 +410,23 @@ def bot(op):
                                     Setmain["autoscan"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Cekmid dinonaktifkan")
                                 else:
-                                    cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off")            
+                                    cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off") 
+                       
+                            elif msg.text == RAKey +'cleanblacklist':
+                                if msg._from in RASadmin or msg._from in self.wait["RAAdmin"] or msg._from in self.wait["RAStaff"]:
+                                    group = cl.getGroup(msg.to)
+                                    gMembMids = [contact.mid for contact in group.members]
+                                    matched_list = []
+                                    if matched_list != []:
+                                        cl.sendText(msg.to,"Peringatan user bl")
+                                    for tag in self.wait["RAblacklist"]:
+                                        matched_list+=filter(lambda str: str == tag, gMembMids)
+                                    if matched_list == []:
+                                        cl.sendText(msg.to,"User bl tidak ada")
+                                        return
+                                    for jj in matched_list:
+                                        cl.kickoutFromGroup(msg.to,[jj])
+                                                                            
                             
             #---------------- Fungsi Command ------------------#
                         
