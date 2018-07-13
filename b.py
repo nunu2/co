@@ -108,6 +108,75 @@ def bot(op):
                     if Setmain["autoscan"] == True:
                         msg.contentType = 0
                         cl.sendText(msg.to,msg.contentMetadata["mid"])
+                 if msg._from in RAOwner:
+                  if Setmain["botadd"] == True:
+                    if msg.contentMetadata["mid"] in Bots:
+                        cl.sendMessage(msg.to,"Contact itu sudah jadi anggota bot")
+                        Setmain["botadd"] = True
+                    else:
+                        Bots.append(msg.contentMetadata["mid"])
+                        Setmain["botadd"] = True
+                        cl.sendMessage(msg.to,"Berhasil menambahkan ke anggota bot")
+                 if Setmain["botdell"] == True:
+                    if msg.contentMetadata["mid"] in RABots:
+                        RABots.remove(msg.contentMetadata["mid"])
+                        cl.sendMessage(msg.to,"Berhasil menghapus dari anggota bot")
+                    else:
+                        Setmain["botdell"] = True
+                        cl.sendMessage(msg.to,"Contact itu bukan anggota bot saints")
+#ADD STAFF
+                 if msg._from in RAOwner:
+                  if Setmain["staffadd"] == True:
+                    if msg.contentMetadata["mid"] in RAStaff:
+                        cl.sendMessage(msg.to,"Contact itu sudah jadi staff")
+                        Setmain["staffadd"] = True
+                    else:
+                        RAStaff.append(msg.contentMetadata["mid"])
+                        Setmain["staffadd"] = True
+                        cl.sendMessage(msg.to,"Berhasil menambahkan ke staff")
+                 if Setmain["staffdell"] == True:
+                    if msg.contentMetadata["mid"] in RAStaff:
+                        RAStaff.remove(msg.contentMetadata["mid"])
+                        cl.sendMessage(msg.to,"Berhasil menghapus dari staff")
+                        Setmain["staffdell"] = True
+                    else:
+                        Setmain["staffdell"] = True
+                        cl.sendMessage(msg.to,"Contact itu bukan staff")
+#ADD ADMIN
+                 if msg._from in RAOwner:
+                  if Setmain["adminadd"] == True:
+                    if msg.contentMetadata["mid"] in RAAdmin:
+                        cl.sendMessage(msg.to,"Contact itu sudah jadi admin")
+                        Setmain["adminadd"] = True
+                    else:
+                        RAAdmin.append(msg.contentMetadata["mid"])
+                        Setmain["adminadd"] = True
+                        cl.sendMessage(msg.to,"Berhasil menambahkan ke admin")
+                 if Setmain["admindell"] == True:
+                    if msg.contentMetadata["mid"] in RAAdmin:
+                        RAAdmin.remove(msg.contentMetadata["mid"])
+                        cl.sendMessage(msg.to,"Berhasil menghapus dari admin")
+                    else:
+                        Setmain["admindell"] = True
+                        cl.sendMessage(msg.to,"Contact itu bukan admin")
+#ADD BLACKLIST
+                 if msg._from in RAOwner:
+                  if wait["wblacklist"] == True:
+                    if msg.contentMetadata["mid"] in wait["blacklist"]:
+                        cl.sendMessage(msg.to,"Contact itu sudah ada di blacklist")
+                        wait["wblacklist"] = True
+                    else:
+                        wait["blacklist"][msg.contentMetadata["mid"]] = True
+                        wait["wblacklist"] = True
+                        cl.sendMessage(msg.to,"Berhasil menambahkan ke blacklist user")
+                  if wait["dblacklist"] == True:
+                    if msg.contentMetadata["mid"] in wait["blacklist"]:
+                        del wait["blacklist"][msg.contentMetadata["mid"]]
+                        cl.sendMessage(msg.to,"Berhasil menghapus dari blacklist user")
+                    else:
+                        wait["dblacklist"] = True
+                        cl.sendMessage(msg.to,"Contact itu tidak ada di blacklist")
+#TALKBAN                        
                         
                 elif msg.contentType == 0:
                     if Setmain["autoread"] == True:
