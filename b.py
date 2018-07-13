@@ -378,6 +378,18 @@ def bot(op):
                                     hasil += "\n\nтσтαℓ {} вℓα¢ℓιsт".format(str(len(cl.getContacts(Setmain["blacklist"]))))
                                     cl.sendText(msg.to,hasil)
 
+                        elif text.lower() == "admin":
+                            if msg._from in RAOwner:
+                                if Setmain["RAAadmin"] == {}:
+                                    cl.sendMessageWithMention(msg.to, msg._from,"Maaf","belom ada admin")
+                                else:
+                                    no = 0
+                                    hasil = "🔎² αя вσтѕ 🔎²\n"
+                                    for a in cl.getContacts(Setmain["RAAdmin"]):
+                                        no += 1
+                                        hasil += "\n" + str(no) + ". " + str(a.displayName)
+                                    hasil += "\n\nтσтαℓ {} вℓα¢ℓιsт".format(str(len(cl.getContacts(Setmain["RAAdmin"]))))
+                                    cl.sendText(msg.to,hasil)
                                     
                         elif ".hai" in text.lower():
                             if msg._from in RASuper:
@@ -396,7 +408,48 @@ def bot(op):
                                             kicker = random.choice(klist)
                                             kicker.kickoutFromGroup(msg.to,[target])
                                         except:
-                                            pass                                 
+                                            pass 
+                        elif "adminadd " in text.lower):
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           Setmain["RAAdmin"][target] = True
+                                           cl.sendMessage(msg.to,"Berhasil menambahkan admin")
+                                       except:
+                                           pass
+                        elif "staffadd " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           Setmain["RAStaff"][target] = True
+                                           cl.sendMessage(msg.to,"Berhasil menambahkan staff")
+                                       except:
+                                           pass
+                        elif "botadd " in text.lower():
+                          if wait["selfbot"] == True:
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           Setmain["RABots"][target] = True
+                                           cl.sendMessage(msg.to,"Berhasil menambahkan bots")
+                                       except:
+                                           pass
+                                        
                         elif "kick @α я" in text.lower():
                             if Setmain["larangan"] == True:                            
                                 cl.sendMessageWithMention(msg.to, msg._from,"wooiiii","mau kick bosku ya")
