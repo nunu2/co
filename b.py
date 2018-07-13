@@ -380,6 +380,18 @@ def bot(op):
                             if msg._from in admin:
                                 wait["dellbots"] = True
                                 cl.sendText(msg.to,"Kirim kontaknya...")
+                                
+                        elif cmd == "ban:on" or text.lower() == 'ban:on':
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                                wait["wblacklist"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
+
+                        elif cmd == "unban:on" or text.lower() == 'unban:on':
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                                wait["dblacklist"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
                                     
                                     
                         elif text.lower() == ".cekmid on":
