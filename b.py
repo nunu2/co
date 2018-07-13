@@ -26,7 +26,7 @@ def bot(op):
 
         if op.type == 13:
             if mid in op.param3:
-              if op.param2 in RAOwner:                    
+              if op.param2 in RAOwner and op.param2 in Setmain["RABots"]:                    
                 if Setmain["autojoin"] == True:                 
                     cl.acceptGroupInvitation(op.param1)
 
@@ -66,7 +66,7 @@ def bot(op):
                   cl.kickoutFromGroup(op.param1,[op.param2]) 
                   Setmain["blacklist"][op.param2] = True                
         if op.type == 19:
-           if op.param3 in RAOwner:
+           if op.param3 in Setmain["RABots"]:
               cl.inviteIntoGroup(op.param1,RAOwner)            
               cl.kickoutFromGroup(op.param1,[op.param2])
               Setmain["blacklist"][op.param2] = True
