@@ -26,7 +26,7 @@ def bot(op):
 
         if op.type == 13:
             if mid in op.param3:
-              if op.param2 in RAOwner and op.param2 in Setmain["RABots"]  an op.param2 in Setmain["RAAdmin"]:                    
+              if op.param2 in RAOwner or op.param2 in Setmain["RABots"]  or op.param2 in Setmain["RAAdmin"]:                    
                 if Setmain["autojoin"] == True:                 
                     cl.acceptGroupInvitation(op.param1)
 
@@ -108,16 +108,16 @@ def bot(op):
                     if Setmain["autoscan"] == True:
                         msg.contentType = 0
                         cl.sendText(msg.to,msg.contentMetadata["mid"])
-                 if msg._from in RAOwner:
+                if msg._from in RAOwner:
                    if Setmain["botadd"] == True:
                      if msg.contentMetadata["mid"] in Setmain["RABots"]:
                         cl.sendMessage(msg.to,"Contact itu sudah jadi anggota bot")
                         Setmain["botadd"] = True
-                    else:
+                     else:
                         Setmain["RABots"].append(msg.contentMetadata["mid"])
                         Setmain["botadd"] = True
                         cl.sendMessage(msg.to,"Berhasil menambahkan ke anggota bot")
-                 if Setmain["botdell"] == True:
+                if Setmain["botdell"] == True:
                     if msg.contentMetadata["mid"] in Setmain["RABots"]:
                         Setmain["RABots"].remove(msg.contentMetadata["mid"])
                         cl.sendMessage(msg.to,"Berhasil menghapus dari anggota bot")
@@ -125,7 +125,7 @@ def bot(op):
                         Setmain["botdell"] = True
                         cl.sendMessage(msg.to,"Contact itu bukan anggota bot saints")
 #ADD STAFF
-                 if msg._from in RAOwner:
+                if msg._from in RAOwner:
                   if Setmain["staffadd"] == True:
                     if msg.contentMetadata["mid"] in Setmin["RAStaff"]:
                         cl.sendMessage(msg.to,"Contact itu sudah jadi staff")
@@ -134,7 +134,7 @@ def bot(op):
                         Setmain["RAStaff"].append(msg.contentMetadata["mid"])
                         Setmain["staffadd"] = True
                         cl.sendMessage(msg.to,"Berhasil menambahkan ke staff")
-                 if Setmain["staffdell"] == True:
+                if Setmain["staffdell"] == True:
                     if msg.contentMetadata["mid"] in Setmain["RAStaff]:
                         Setmain["RAStaff"].remove(msg.contentMetadata["mid"])
                         cl.sendMessage(msg.to,"Berhasil menghapus dari staff")
@@ -143,7 +143,7 @@ def bot(op):
                         Setmain["staffdell"] = True
                         cl.sendMessage(msg.to,"Contact itu bukan staff")
 #ADD ADMIN
-                 if msg._from in RAOwner:
+                if msg._from in RAOwner:
                   if Setmain["adminadd"] == True:
                     if msg.contentMetadata["mid"] in Setmain["RAAdmin"]:
                         cl.sendMessage(msg.to,"Contact itu sudah jadi admin")
@@ -152,7 +152,7 @@ def bot(op):
                         Setmain["RAAdmin"].append(msg.contentMetadata["mid"])
                         Setmain["adminadd"] = True
                         cl.sendMessage(msg.to,"Berhasil menambahkan ke admin")
-                 if Setmain["admindell"] == True:
+                if Setmain["admindell"] == True:
                     if msg.contentMetadata["mid"] in RAAdmin:
                         Setmain["RAAdmin"].remove(msg.contentMetadata["mid"])
                         cl.sendMessage(msg.to,"Berhasil menghapus dari admin")
@@ -160,7 +160,7 @@ def bot(op):
                         Setmain["admindell"] = True
                         cl.sendMessage(msg.to,"Contact itu bukan admin")
 #ADD BLACKLIST
-                 if msg._from in RAOwner:
+                if msg._from in RAOwner:
                   if Setmain["wblacklist"] == True:
                     if msg.contentMetadata["mid"] in Setmain["blacklist"]:
                         cl.sendMessage(msg.to,"Contact itu sudah ada di blacklist")
@@ -169,7 +169,7 @@ def bot(op):
                         Setmain["blacklist"][msg.contentMetadata["mid"]] = True
                         Setmain["wblacklist"] = True
                         cl.sendMessage(msg.to,"Berhasil menambahkan ke blacklist user")
-                  if Setmain["dblacklist"] == True:
+                if Setmain["dblacklist"] == True:
                     if msg.contentMetadata["mid"] in Setmain["blacklist"]:
                         del Setmain["blacklist"][msg.contentMetadata["mid"]]
                         cl.sendMessage(msg.to,"Berhasil menghapus dari blacklist user")
@@ -546,8 +546,8 @@ def bot(op):
                                for target in targets:
                                        try:
                                            Setmain["blaclist"][target] = True
-                                      except:
-                                          pass                                        
+                                       except:
+                                           pass                                        
                         elif "botdell " in text.lower():
                             if msg._from in RAOwner:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -574,7 +574,7 @@ def bot(op):
                                            cl.sendMessage(msg.to,"Berhasil menghapus admin")
                                        except:
                                            pass
-                        elif "staffdell " in msg.text):
+                        elif "staffdell " in text.lower():
                             if msg._from in RAOwner or msg._from in Setmain["RAAdmin"]:    
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
