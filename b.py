@@ -410,14 +410,14 @@ def bot(op):
                                 else:
                                     cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off") 
                        
-                            elif msg.text == RAKey +'cleanblacklist':
-                                if msg._from in RASadmin or msg._from in self.wait["RAAdmin"] or msg._from in self.wait["RAStaff"]:
+                            elif text.lower() == "cleanblacklist':
+                                if msg._from in RAOwner or msg._from in Setmain["RAAdmin"]:
                                     group = cl.getGroup(msg.to)
                                     gMembMids = [contact.mid for contact in group.members]
                                     matched_list = []
                                     if matched_list != []:
                                         cl.sendText(msg.to,"Peringatan user bl")
-                                    for tag in self.wait["RAblacklist"]:
+                                    for tag in self.Setmain["blacklist"]:
                                         matched_list+=filter(lambda str: str == tag, gMembMids)
                                     if matched_list == []:
                                         cl.sendText(msg.to,"User bl tidak ada")
