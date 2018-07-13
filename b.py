@@ -5,7 +5,7 @@ from time import sleep
 from bs4 import BeautifulSoup
 import time, asyncio, json, threading, codecs, sys, os, re, urllib, requests, wikipedia, html5lib, timeit, pafy, youtube_dl
 
-line = LINE("EuwlOy2r7aSr2H53uaq6.za+e5svtVOOkvtLheQuILG.A0wKObfr0tvUJp76KBKqDU8H5EPzs9Pco1zO54JyLxo=")
+line = LINE("EuxMKJA4TO7axX82XGua.RarV+yhk8E2V4GZUoAJCQG.jeAWIruR/vLFQCA4mtmOBrGpwrnlQ1QHCpw0CrSjJi0=")
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 
@@ -13,9 +13,7 @@ line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 cl = line
 oepoll = OEPoll(cl)
 mid = cl.profile.mid
-RASuper = ["ud62334f46b0f181f69beaf801ab3c75a"]
-RAStaff = ["ua1b1326288657deb35461cce7f28a2d5","u1de2fe12c2814774acbe099ea030c01f"]
-RAFa = RASuper + RAStaff
+RAOwner = ["ud62334f46b0f181f69beaf801ab3c75a"]
 Setbot = codecs.open("setting.json","r","utf-8")
 Setmain = json.load(Setbot) 
 
@@ -28,13 +26,13 @@ def bot(op):
 
         if op.type == 13:
             if mid in op.param3:
-              if op.param2 in RASuper:                    
+              if op.param2 in RAOwner:                    
                 if Setmain["autojoin"] == True:                 
                     cl.acceptGroupInvitation(op.param1)
 
         if op.type == 11:
            if Setmain["protectqr"] == True:
-               if op.param2 not in RAFa:
+               if op.param2 not in RAOwner:
                    G = cl.getGroup(op.param1)
                    G.preventJoinByTicket = True
                    cl.kickoutFromGroup(op.param1,[op.param2])
@@ -42,7 +40,7 @@ def bot(op):
                    Setmain["blacklist"][op.param2] = True        
         if op.type == 13:
            if Setmain["protectguest"] == True:
-               if op.param2 not in RAFa:
+               if op.param2 not in RAOwner:
                   cl.cancelGroupInvitation(op.param1,[op.param3])
                   cl.kickoutFromGroup(op.param1,[op.param2]) 
                   Setmain["blacklist"][op.param2] = True
@@ -59,17 +57,17 @@ def bot(op):
                 pass
         if op.type == 32:
            if Setmain["cancel"] == True:
-               if op.param2 not in RAFa:
+               if op.param2 not in RAOwner:
                   cl.kickoutFromGroup(op.param1,[op.param2])
                   Setmain["blacklist"][op.param2] = True            
         if op.type == 19:
            if Setmain["protect"] == True:
-               if op.param2 not in RASuper:
+               if op.param2 not in RAOwner:
                   cl.kickoutFromGroup(op.param1,[op.param2]) 
                   Setmain["blacklist"][op.param2] = True                
         if op.type == 19:
-           if op.param3 in RASuper:
-              cl.inviteIntoGroup(op.param1,RASuper)            
+           if op.param3 in RAOwner:
+              cl.inviteIntoGroup(op.param1,RAOwner)            
               cl.kickoutFromGroup(op.param1,[op.param2])
               Setmain["blacklist"][op.param2] = True
            else:
@@ -436,7 +434,6 @@ def bot(op):
                                        except:
                                            pass
                         elif "botadd " in text.lower():
-                          if wait["selfbot"] == True:
                             if msg._from in RAOwner:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
