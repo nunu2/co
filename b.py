@@ -114,12 +114,12 @@ def bot(op):
                         cl.sendMessage(msg.to,"Contact itu sudah jadi anggota bot")
                         Setmain["botadd"] = True
                      else:
-                        Setmain["RABots"].append(msg.contentMetadata["mid"])
+                        Setmain["RABots"](msg.contentMetadata["mid"])
                         Setmain["botadd"] = True
                         cl.sendMessage(msg.to,"Berhasil menambahkan ke anggota bot")
                 if Setmain["botdell"] == True:
                     if msg.contentMetadata["mid"] in Setmain["RABots"]:
-                        Setmain["RABots"].remove(msg.contentMetadata["mid"])
+                        del Setmain["RABots"](msg.contentMetadata["mid"])
                         cl.sendMessage(msg.to,"Berhasil menghapus dari anggota bot")
                     else:
                         Setmain["botdell"] = True
