@@ -26,13 +26,13 @@ def bot(op):
 
         if op.type == 13:
             if mid in op.param3:
-              if op.param2 in RAOwner and op.param2 in Setmain["RABots"]:                    
+              if op.param2 in RAOwner and op.param2 in Setmain["RABots"]  an op.param2 in Setmain["RAAdmin"]:                    
                 if Setmain["autojoin"] == True:                 
                     cl.acceptGroupInvitation(op.param1)
 
         if op.type == 11:
            if Setmain["protectqr"] == True:
-               if op.param2 not in RAOwner:
+               if op.param2 not in RAOwner and op.param2 not in Setmain["RABots"] and op.param2 not in Setmain["RAAdmin"] and op.param2 not in Setmain ["RAStaff"]:
                    G = cl.getGroup(op.param1)
                    G.preventJoinByTicket = True
                    cl.kickoutFromGroup(op.param1,[op.param2])
@@ -40,7 +40,7 @@ def bot(op):
                    Setmain["blacklist"][op.param2] = True        
         if op.type == 13:
            if Setmain["protectguest"] == True:
-               if op.param2 not in RAOwner:
+               if op.param2 not in RAOwner and op.param2 not in Setmain["RABots"] and op.param2 not in Setmain["RAAdmin"] and op.param2 not in Setmain ["RAStaff"]: 
                   cl.cancelGroupInvitation(op.param1,[op.param3])
                   cl.kickoutFromGroup(op.param1,[op.param2]) 
                   Setmain["blacklist"][op.param2] = True
@@ -57,22 +57,31 @@ def bot(op):
                 pass
         if op.type == 32:
            if Setmain["cancel"] == True:
-               if op.param2 not in RAOwner:
+               if op.param2 not in RAOwner and op.param2 not in Setmain["RABots"] and op.param2 not in Setmain["RAAdmin"] and op.param2 not in Setmain ["RAStaff"]:   
                   cl.kickoutFromGroup(op.param1,[op.param2])
                   Setmain["blacklist"][op.param2] = True            
         if op.type == 19:
            if Setmain["protect"] == True:
-               if op.param2 not in RAOwner:
+               if op.param2 not in RAOwner and op.param2 not in Setmain["RABots"] and op.param2 not in Setmain["RAAdmin"] and op.param2 not in Setmain ["RAStaff"]:
                   cl.kickoutFromGroup(op.param1,[op.param2]) 
                   Setmain["blacklist"][op.param2] = True                
         if op.type == 19:
            if op.param3 in Setmain["RABots"]:
-              cl.inviteIntoGroup(op.param1,RAOwner)            
-              cl.kickoutFromGroup(op.param1,[op.param2])
-              Setmain["blacklist"][op.param2] = True
-           else:
-               pass
-                    
+               if op.param2 not in RAOwner and op.param2 not in Setmain["RABots"] and op.param2 not in Setmain["RAAdmin"]:    
+                   cl.inviteIntoGroup(op.param1,[op.param3])            
+                   cl.kickoutFromGroup(op.param1,[op.param2])
+                   Setmain["blacklist"][op.param2] = True
+                else:
+                    pass
+        if op.type == 19:
+           if op.param3 in RAOwner and op.param3 in Setmain["RAAdmin"] and op.param3 in Setmain["RAStaff"]:
+               if op.param2 not in RAOwner and op.param2 not in Setmain["RABots"] and op.param2 not in Setmain["RAAdmin"]:    
+                   cl.inviteIntoGroup(op.param1,[op.param3])            
+                   cl.kickoutFromGroup(op.param1,[op.param2])
+                   Setmain["blacklist"][op.param2] = True
+                else:
+                    pass
+                                        
         if op.type == 46:
             if op.param2 in mid:
                 cl.removeAllMessages() 
