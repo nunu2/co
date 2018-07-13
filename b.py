@@ -350,7 +350,37 @@ def bot(op):
                                     Setmain["protectqr"] = False
                                     cl.sendMessageWithMention(msg.to,msg._from,"","protect Qr dinonaktifkan")
                                 else:
-                                    cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off")                                   
+                                    cl.sendMessageWithMention(msg.to,msg._from,"","Sudah off") 
+                        elif cmd == "admin:on" or text.lower() == 'admin:on':
+                            if msg._from in admin:
+                                wait["addadmin"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
+
+                        elif cmd == "admin:repeat" or text.lower() == 'admin:repeat':
+                            if msg._from in admin:
+                                wait["delladmin"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
+
+                        elif cmd == "staff:on" or text.lower() == 'staff:on':
+                            if msg._from in admin:
+                                wait["addstaff"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
+
+                        elif cmd == "staff:repeat" or text.lower() == 'staff:repeat':
+                            if msg._from in admin:
+                                wait["dellstaff"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
+
+                        elif cmd == "bot:on" or text.lower() == 'bot:on':
+                            if msg._from in admin:
+                                wait["addbots"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
+
+                        elif cmd == "bot:repeat" or text.lower() == 'bot:repeat':
+                            if msg._from in admin:
+                                wait["dellbots"] = True
+                                cl.sendText(msg.to,"Kirim kontaknya...")
+                                    
                                     
                         elif text.lower() == ".cekmid on":
                             if msg._from in RAOwner or msg._from in Setmain["RAAdmin"] or msg._from in Setmain["RAStaff"]: 
