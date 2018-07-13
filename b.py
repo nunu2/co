@@ -347,12 +347,12 @@ def bot(op):
                                 #cl.sendMessageWithMention(msg.to,ra.creator.mid,"Maaf pemilik group","\naku keluar dulu ya..")
                                 cl.leaveGroup(msg.to)
                         elif text.lower() ==".clearban":
-                            if msg._from in RASuper:                                
+                            if msg._from in RAOwner:                                
                                 Setmain["blacklist"] = {}
                                 cl.sendMessageWithMention(msg.to,msg._from,"","blacklist di kosongkan.")                                 
 
                         elif text.lower() == ".listgroup":
-                            if msg._from in RASuper:
+                            if msg._from in RAOwner:
                                ma = ""
                                a = 0
                                gid = cl.getGroupIdsJoined()
