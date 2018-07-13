@@ -364,7 +364,7 @@ def bot(op):
                                cl.sendText(msg.to,"╔══[ ℓιsт gяσυρ ]\n║\n"+ma+"║\n╚══[ тσтαℓ「"+str(len(gid))+"」gяσυρ ]")                                
                                 
                         elif text.lower() == ".listbl":
-                            if msg._from in RASuper:
+                            if msg._from in RAOwner:
                                 if Setmain["blacklist"] == {}:
                                     cl.sendMessageWithMention(msg.to, msg._from,"Maaf","blacklist kosong")
                                 else:
@@ -388,7 +388,19 @@ def bot(op):
                                         hasil += "\n" + str(no) + ". " + str(a.displayName)
                                     hasil += "\n\nтσтαℓ {} вℓα¢ℓιsт".format(str(len(cl.getContacts(Setmain["RAAdmin"]))))
                                     cl.sendText(msg.to,hasil)
-                                    
+                        elif text.lower() == "bots":
+                            if msg._from in RAOwner:
+                                if Setmain["RABots"] == {}:
+                                    cl.sendMessageWithMention(msg.to, msg._from,"Maaf","belom ada bots")
+                                else:
+                                    no = 0
+                                    hasil = "🔎² αя вσтѕ 🔎²\n"
+                                    for a in cl.getContacts(Setmain["RABots"]):
+                                        no += 1
+                                        hasil += "\n" + str(no) + ". " + str(a.displayName)
+                                    hasil += "\n\nтσтαℓ {} вℓα¢ℓιsт".format(str(len(cl.getContacts(Setmain["RABots"]))))
+                                    cl.sendText(msg.to,hasil)
+                                                                        
                         elif ".hai" in text.lower():
                             if msg._from in RASuper:
                                 key = eval(msg.contentMetadata["MENTION"])
@@ -397,7 +409,7 @@ def bot(op):
                                 for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
                                 for target in targets:
-                                    if target in RAFa:
+                                    if target in Setmain["RABots"]:
                                         pass
                                     else:
                                         try:
