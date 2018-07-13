@@ -467,6 +467,70 @@ def bot(op):
                                            cl.sendMessage(msg.to,"Berhasil menambahkan bots")
                                        except:
                                            pass
+                        elif ". " in text.lower():
+                            if msg._from in RAOwner or msg._from in Setmain["RAAdmin"]:                            
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           Setmain["blaclist"][target] = True
+                                      except:
+                                          pass                                        
+                        elif "botdell " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           del Setmain["RABots"][target]
+                                           cl.sendMessage(msg.to,"Berhasil menghapus bots")
+                                       except:
+                                           pass
+                        elif "admindell " in text.lower():
+                            if msg._from in RAOwner:
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           del Setmain["RAAdmin"][target]
+                                           cl.sendMessage(msg.to,"Berhasil menghapus admin")
+                                       except:
+                                           pass
+                        elif "staffdell " in msg.text):
+                            if msg._from in RAOwner or msg._from in Setmain["RAAdmin"]:    
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           del Setmain["RAStaff"][target]
+                                           cl.sendMessage(msg.to,"Berhasil menghapus staff")
+                                       except:
+                                           pass
+                        elif "Unban " in text.lower():
+                            if msg._from in RAOwner or msg._from in Setmain["RAAdmin"]:                            
+                               key = eval(msg.contentMetadata["MENTION"])
+                               key["MENTIONEES"][0]["M"]
+                               targets = []
+                               for x in key["MENTIONEES"]:
+                                    targets.append(x["M"])
+                               for target in targets:
+                                       try:
+                                           del Setmain["blacklist"][target]
+                                           cl.sendMessage(msg.to,"Berhasil menghapus blacklist")
+                                       except:
+                                           pass
                                         
                         elif "kick @α я" in text.lower():
                             if Setmain["larangan"] == True:                            
