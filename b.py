@@ -71,16 +71,16 @@ def bot(op):
                    cl.inviteIntoGroup(op.param1,[op.param3])            
                    cl.kickoutFromGroup(op.param1,[op.param2])
                    Setmain["blacklist"][op.param2] = True
-                else:
-                    pass
+               else:
+                   pass
         if op.type == 19:
            if op.param3 in RAOwner and op.param3 in Setmain["RAAdmin"] and op.param3 in Setmain["RAStaff"]:
                if op.param2 not in RAOwner and op.param2 not in Setmain["RABots"] and op.param2 not in Setmain["RAAdmin"]:    
                    cl.inviteIntoGroup(op.param1,[op.param3])            
                    cl.kickoutFromGroup(op.param1,[op.param2])
                    Setmain["blacklist"][op.param2] = True
-                else:
-                    pass
+               else:
+                   pass
                                         
         if op.type == 46:
             if op.param2 in mid:
@@ -135,7 +135,7 @@ def bot(op):
                         Setmain["staffadd"] = True
                         cl.sendMessage(msg.to,"Berhasil menambahkan ke staff")
                 if Setmain["staffdell"] == True:
-                    if msg.contentMetadata["mid"] in Setmain["RAStaff]:
+                    if msg.contentMetadata["mid"] in Setmain["RAStaff"]:
                         Setmain["RAStaff"].remove(msg.contentMetadata["mid"])
                         cl.sendMessage(msg.to,"Berhasil menghapus dari staff")
                         Setmain["staffdell"] = True
