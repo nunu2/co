@@ -51,7 +51,10 @@ def bot(op):
                 cl.cancelGroupInvitation(op.param1,[op.param3])
                 cl.kickoutFromGroup(op.param1,[op.param2])
             else:
-                pass                
+                cl.cancelGroupInvitation(op.param1,[op.param3])
+                cl.kickoutFromGroup(op.param1,[op.param2])
+            else:
+                pass
         if op.type == 17:
             if op.param2 in Setmain["blacklist"]:
                 cl.kickoutFromGroup(op.param1,[op.param2])
@@ -69,11 +72,14 @@ def bot(op):
                   Setmain["blacklist"][op.param2] = True                
         if op.type == 19:
            if op.param3 in RASuper:
-              cl.inviteIntoGroup(op.param1,RASuper)            
+              cl.inviteIntoGroup(op.param1,[op.param3])            
               cl.kickoutFromGroup(op.param1,[op.param2])
               Setmain["blacklist"][op.param2] = True
-           else:
-               pass
+          else:
+              cl.kickoutFromGroup(op.param1,[op.param2])
+              cl.inviteIntoGroup(op.param1,[op.param3])
+          else:
+              pass
                     
         if op.type == 46:
             if op.param2 in mid:
@@ -318,14 +324,14 @@ def bot(op):
                                 cl.sendMessageWithMention(msg.to, msg._from,"","\nMemproses..")
                                 cl.sendText(msg.to,msg._from)
                         
-                        elif text.lower() == ".respon":
+                        elif text.lower() == "bot":
                             if msg._from in RASuper:                            
-                                cl.sendMessageWithMention(msg.to,msg._from,""," ")
+                                cl.sendText(msg.to, "kuy cuy")
                             
-                        elif text.lower() == ".spbot":
+                        elif text.lower() == "spion":
                             if msg._from in RASuper:                            
                                 start = time.time()
-                                cl.sendText(msg.to, "Loading...")
+                                cl.sendText(msg.to, "enteni yo,,,,")
                                 elapsed_time = time.time() - start
                                 cl.sendText(msg.to, "%s " % (elapsed_time))
                           
@@ -343,7 +349,7 @@ def bot(op):
                                 except:
                                     pass        
                                                     
-                        elif text.lower() == ".pulang":
+                        elif text.lower() == "bye":
                             if msg._from in RASuper:
                                 ra = cl.getGroup(msg.to)
                                 #cl.sendMessageWithMention(msg.to,ra.creator.mid,"Maaf pemilik group","\naku keluar dulu ya..")
