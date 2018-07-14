@@ -72,11 +72,7 @@ def bot(op):
               cl.inviteIntoGroup(op.param1,[op.param3])            
               cl.kickoutFromGroup(op.param1,[op.param2])
               Setmain["blacklist"][op.param2] = True
-           
-            if op.param2 in Setmain["blacklist"]:
-              cl.kickoutFromGroup(op.param1,[op.param2])
-              cl.inviteIntoGroup(op.param1,[op.param3])
-          else:
+           else:
               pass
                     
         if op.type == 46:
