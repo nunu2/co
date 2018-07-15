@@ -318,7 +318,7 @@ def bot(op):
                                 cl.sendMessageWithMention(msg.to, msg._from,"","\nMemproses..")
                                 cl.sendText(msg.to,msg._from)
                         
-                        elif text.lower() == ".respon":
+                        elif text.lower() == ".res":
                             if msg._from in RASuper:                            
                                 cl.sendMessageWithMention(msg.to,msg._from,""," ")
                             
