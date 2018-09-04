@@ -10,25 +10,25 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import youtube_dl
 
-cl = LINE("Euazz5kOmh2s4wGVi0j5.Jg1A2bsi0W56VgjoRBGMbq.Yzz6eK/WabyjUhVkeLLyKb0EuKk5R2RIRzNzfDl612s=")
+cl = LINE()
 cl.log("Auth Token : " + str(cl.authToken))
 cl.log("Timelin Token : " + str(cl.tl.channelAccessToken))
 
-ki = LINE("EuM2oIiqJwXg7nR6yaW7.3F4TFIJpBukIKZH+pRMy5W.9AWEu8RwHhn1cabC5/MIOGIRDdV1ub/1mxPwxL9KJUI=")
-ki.log("Auth Token : " + str(ki.authToken))
-ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
+#ki = LINE("EuM2oIiqJwXg7nR6yaW7.3F4TFIJpBukIKZH+pRMy5W.9AWEu8RwHhn1cabC5/MIOGIRDdV1ub/1mxPwxL9KJUI=")
+#ki.log("Auth Token : " + str(ki.authToken))
+#ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
 
-kk = LINE("Euz9rlbTlJQrBdowUwP7.KrQYoKth/LJiOQJLGlbB5W.ztgwznGFrzXQcVMdh5on3HQtRdXqb3QjEjhugOjd7C4=")
-kk.log("Auth Token : " + str(kk.authToken))
-kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
+#kk = LINE("Euz9rlbTlJQrBdowUwP7.KrQYoKth/LJiOQJLGlbB5W.ztgwznGFrzXQcVMdh5on3HQtRdXqb3QjEjhugOjd7C4=")
+#kk.log("Auth Token : " + str(kk.authToken))
+#kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
 
-kc = LINE("EuJ1SsbRdb67qTGJEcO0.JNr1gEtGC+0FcfMUILpHaa.H4J/3D0anu5DD5D+TBr2P7VwqEX3XALoiTgICcKz3Xc=")
-kc.log("Auth Token : " + str(kc.authToken))
-kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
+#kc = LINE("EuJ1SsbRdb67qTGJEcO0.JNr1gEtGC+0FcfMUILpHaa.H4J/3D0anu5DD5D+TBr2P7VwqEX3XALoiTgICcKz3Xc=")
+#kc.log("Auth Token : " + str(kc.authToken))
+#kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
 
-sw = LINE("EucKpEqR9xeOxkaxieA4.wBAv6R06LACMVV8IjIdfba.igLJSt95oXr0x5BeZ7dnzltZEgVM8Bkk97DITtsHllA=")
-sw.log("Auth Token : " + str(sw.authToken))
-sw.log("Timeline Token : " + str(sw.tl.channelAccessToken))
+#sw = LINE("EucKpEqR9xeOxkaxieA4.wBAv6R06LACMVV8IjIdfba.igLJSt95oXr0x5BeZ7dnzltZEgVM8Bkk97DITtsHllA=")
+#sw.log("Auth Token : " + str(sw.authToken))
+#sw.log("Timeline Token : " + str(sw.tl.channelAccessToken))
 
 oepoll = OEPoll(cl)
 creator = ["ua7fd5802e32c47d1086336d198b00a81"]
@@ -36,12 +36,12 @@ owner = ["ua7fd5802e32c47d1086336d198b00a81"]
 admin = ["ua7fd5802e32c47d1086336d198b00a81"]
 staff = ["ua7fd5802e32c47d1086336d198b00a81"]
 mid = cl.getProfile().mid
-Amid = ki.getProfile().mid
-Bmid = kk.getProfile().mid
-Cmid = kc.getProfile().mid
-Zmid = sw.getProfile().mid
-KAC = [cl,ki,kk,kc]
-ABC = [ki,kk,kc]
+#Amid = ki.getProfile().mid
+#Bmid = kk.getProfile().mid
+#Cmid = kc.getProfile().mid
+#Zmid = sw.getProfile().mid
+KAC = [cl]
+#ABC = [ki,kk,kc]
 Bots = ["ua7fd5802e32c47d1086336d198b00a81","u5cc28b8d545c0a49960dcd5d44be2405","u0049b760e5fa8ce51596b618414c75ce","uf0878ee5528c10c352400b12cf7ba0a2","u7375c170024eb4a67fe11537429b7145","u29e45e39b1ce3da9f7ec4bb3f8ab1e4b"]
 Saints = admin + staff
 Setbot = codecs.open("setting.json","r","utf-8")
@@ -54,9 +54,9 @@ protectinvite = []
 protectcancel = []
 welcome = []
 
-responsename1 = ki.getProfile().displayName
-responsename2 = kk.getProfile().displayName
-responsename3 = kc.getProfile().displayName
+#responsename1 = ki.getProfile().displayName
+#responsename2 = kk.getProfile().displayName
+#responsename3 = kc.getProfile().displayName
 
 readOpen = codecs.open("read.json","r","utf-8")
 settingOpen = codecs.open("setting.json","r","utf-8")
